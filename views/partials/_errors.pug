@@ -1,0 +1,10 @@
+if error
+    .alert.alert-danger= error
+else
+
+if errors
+    for err in errors
+        .alert.alert-danger= err.text
+else
+
+    

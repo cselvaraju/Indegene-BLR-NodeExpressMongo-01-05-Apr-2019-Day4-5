@@ -1,0 +1,15 @@
+extends ../layouts/index
+
+block content
+    if posts
+        each post in posts
+            .card.card-body.mb-2
+                h4= post.title
+                p= post.body
+                a.btn.btn-dark.btn-block.mb-2(href='/posts/edit/' + post._id) Edit Post
+                form(method='post' action='/posts/' + post._id + '?_method=DELETE')
+                    input(type='hidden' name='_method' value='DELETE')
+                    input.btn.btn-danger.btn-block(type='submit' value='Delete Post')
+
+    else
+        p No blog posts

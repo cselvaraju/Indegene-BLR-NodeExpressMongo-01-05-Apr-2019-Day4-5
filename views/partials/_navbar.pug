@@ -1,0 +1,25 @@
+nav.navbar.navbar-expand-sm.navbar-dark.bg-primary.mb-3
+    .container
+        a.navbar-brand(href='/') Blog Site
+        button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation')
+            span.navbar-toggler-icon
+        #navbarNav.collapse.navbar-collapse
+            ul.navbar-nav
+                li.nav-item
+                    a.nav-link(href='/') Home
+                li.nav-item
+                    a.nav-link(href='/about') About
+            ul.navbar-nav.ml-auto
+                if user
+                    li.nav-item.dropdown
+                        a#navbarDropdownMenuLink.nav-link.dropdown-toggle(href='#' data-toggle='dropdown') Blog Posts
+                        .dropdown-menu
+                            a.dropdown-item(href='/posts') Posts
+                            a.dropdown-item(href='/posts/add') Add Post
+                    li.nav-item
+                        a.nav-link(href='/users/logout') Logout
+                else
+                    li.nav-item
+                        a.nav-link(href='/users/login') Login
+                    li.nav-item
+                        a.nav-link(href='/users/register') Register

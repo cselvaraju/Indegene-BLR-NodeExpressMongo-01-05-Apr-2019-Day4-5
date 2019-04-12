@@ -1,0 +1,16 @@
+extends ../layouts/index
+
+block content
+    .card.card-body
+        h3 Add Blog Post
+        form(action='/posts' method='post')
+            .form-group
+                label(for='title') Title
+                input.form-control(type='text' name='title' required)
+
+            .form-group
+                label(for='body') Body
+                textarea.form-control(name='body' required)
+            
+            button.btn.btn-primary(type='submit') Add Post
+    
